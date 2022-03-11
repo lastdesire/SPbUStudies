@@ -2,31 +2,31 @@ using System;
 
 namespace DotaCardGame
 {
-    public class Game
+    public class Game // Класс, реализующий с помощью своих методов сам процесс игры.
     {
-        public static void StartGame(Player player1, Player player2)
+        public static void StartGame(Player player1, Player player2) // Начало игры.
         {
-            player2.HealHp(40); // Для баланса.
+            player2.HealHp(40); // Добавляем хп второму игроку для баланса.
             Console.WriteLine("Игра началась.");
-            for (var i = 0; i < 8; i++)
+            for (var i = 0; i < 8; i++) // Выдаем каждому игроку по 8 карт.
             {
                 player1.Inventory[i] = Deck.GetCard();
                 player2.Inventory[i] = Deck.GetCard();
             }
-            player1.SpellPocket = Deck.GetSpell();
+            player1.SpellPocket = Deck.GetSpell(); // Выдаем каждому игроку по спеллу.
             player2.SpellPocket = Deck.GetSpell();
             Console.WriteLine("Игроки получили свои карточки.");
             var turn = 1;
 
-            while (turn != 1000)
+            while (turn != 1000) // Вызываем метод Move по очереди, позволяя игрокам ходить в нужном порядке.
             {
-                if (turn % 6 == 0)
+                if (turn % 6 == 0) // Каждые 3 хода (6 раундов) обновляем спеллы игроков.
                 {
                     player1.SpellPocket = Deck.GetSpell();
                     player2.SpellPocket = Deck.GetSpell();
                 }
 
-                if (turn % 10 == 0)
+                if (turn % 10 == 0) // Каждые 5 ходов (10 раундов) обновляем инвентари игроков.
                 {
                     for (var i = 0; i < 8; i++)
                     {
@@ -34,36 +34,36 @@ namespace DotaCardGame
                         player2.Inventory[i] = Deck.GetCard();
                     }
                 }
-                if (turn % 2 == 1)
+                if (turn % 2 == 1) // Ход первого игрока.
                 {
                     Console.WriteLine("///////////////////////// Round {0}: Ход {1} игрока /////////////////////////", turn, player1.Number);
                     Move(player1, player2);
                     turn += 1;
                 }
-                else
+                else // Ход второго игрока.
                 {
                     Console.WriteLine("///////////////////////// Round {0}: Ход {1} игрока /////////////////////////", turn, player2.Number);
                     Move(player2, player1);
                     turn += 1;
                 }
             }
-            Console.WriteLine("Игра длилась слишком долго. Победила дружба.");
+            Console.WriteLine("Игра длилась слишком долго. Победила дружба."); // Если turn == 1000, то мы попадем на эту строчку, завершив игру.
         }
         
-        private static void Move(Player player, Player enemy)
+        private static void Move(Player player, Player enemy) // Ход игрока.
         {
             PrintInfoAboutPlayers(player, enemy);
             PrintInventory(player);
-            PlayPocket(player, enemy);
-            for (var i = 0; i < 3; i++)
+            PlayPocket(player, enemy); // Метод, который реализует розыгрыш спелла в кармане.
+            for (var i = 0; i < 3; i++) 
             {
-                CardOnTheField(player, enemy, i);
-                FieldBattle(player, enemy, i);
+                CardOnTheField(player, enemy, i);  // Метод, который реализует выкладывание карты на поле.
+                FieldBattle(player, enemy, i); // Метод, который реализует битву карт на поле.
             }
             
         }
         
-        private static void PrintInfoAboutPlayers(Player player, Player enemy)
+        private static void PrintInfoAboutPlayers(Player player, Player enemy) // Печать информации об игроке.
         {
             Console.WriteLine("Ваше хп: {0}, ваша мана: {1}", player.Hp, 0);
             PrintInfoAboutFields(player);
@@ -73,7 +73,7 @@ namespace DotaCardGame
             Console.WriteLine("");
         }
         
-        private static void PrintInventory(Player player)
+        private static void PrintInventory(Player player) // Печать информации об инвентаре игрока.
         {
             Console.WriteLine("Инвентарь игрока:");
             for (int i = 0; i < 8; i++)
@@ -101,13 +101,13 @@ namespace DotaCardGame
 
         }
         
-        private static void PlayPocket(Player player, Player enemy)
+        private static void PlayPocket(Player player, Player enemy) // Разыгрываем спелл из инвентаря.
         {
             if (player.SpellPocket != null)
             {
                 Console.WriteLine(
                     "Хотите ли вы использовать предмет в вашем кармане? Да (введите 1) или нет (введите 0):");
-                var answer = EnteringCorrectChooseValue(player);
+                var answer = EnteringCorrectChooseValue(player); // Метод, реализующий корректный ввод.
                 if (answer == 1)
                 {
                     player.SpellPocket.Usage(player, enemy);
@@ -125,7 +125,7 @@ namespace DotaCardGame
             }
         }
 
-        private static void CardOnTheField(Player player, Player enemy, int fieldNumber)
+        private static void CardOnTheField(Player player, Player enemy, int fieldNumber) // Метод, который позволяет выложить карту на поле.
         {
             var counterOfAvailableCards = 0;
             if (player.Fields[fieldNumber] == null)
@@ -180,7 +180,7 @@ namespace DotaCardGame
             }
         }
 
-        private static void FieldBattle(Player player, Player enemy, int fieldNumber)
+        private static void FieldBattle(Player player, Player enemy, int fieldNumber) // Метод, реализующий битву карт на одном поле.
         {
             if (enemy.Fields[fieldNumber] == null)
             {
@@ -215,7 +215,7 @@ namespace DotaCardGame
             
         }
 
-        private static void PrintInfoAboutFields(Player player)
+        private static void PrintInfoAboutFields(Player player) // Метод, который печатает на экран информацию о всех полях игрока.
         {
             Console.WriteLine("Поля: ");
             for (var i = 0; i < 3; i++)
@@ -231,7 +231,7 @@ namespace DotaCardGame
                 }
             }
         }
-        
+        // Метод, который позволяет выбрать использование скилла или игрока персонажа на поле, а также использовать его.
         private static void ChooseAndUseSkillOrDamage(Player player, Player enemy, Character damageDealer, Target damageTaker)
         {
             if (damageDealer.SkillManaCost > damageDealer.Mana)
@@ -317,7 +317,7 @@ namespace DotaCardGame
             return answer;
         }
         
-        private static void DestroyDeadCharacters(Player player, Player enemy)
+        private static void DestroyDeadCharacters(Player player, Player enemy) // Метод, который убирает мертвых персонажей с поля.
         {
             for (var i = 0; i < 3; i++)
             {

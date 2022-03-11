@@ -2,13 +2,13 @@ using System;
 
 namespace DotaCardGame
 {
-    public abstract class Spell
+    public abstract class Spell // Абстрактный класс, от которого будут наследоваться конкретные спеллы.
     {
         public abstract void Usage(Player player, Player enemy);
 
         public abstract void PrintInfoAboutSpell();
     }
-
+    // Ниже описаны классы конкретных спеллов.
     public class HealingSalve : Spell
     {
         public override void Usage(Player player, Player enemy)

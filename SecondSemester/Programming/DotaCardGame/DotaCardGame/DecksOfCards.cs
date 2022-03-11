@@ -2,13 +2,13 @@ using System;
 
 namespace DotaCardGame
 {
-    public class Deck
+    public class Deck // Класс, который содержит в себе методы, позволяющие получить случайного персонажа и случайный спелл. 
     {
         public static Character GetCard()
         {
             var rnd = new Random();
-            var value = rnd.Next(1, 19);
-            switch (value)
+            var value = rnd.Next(1, 19); // Получаем случайное число.
+            switch (value) // Возвращаем персонажа с помощью этого случайного числа.
             {
                 case 1:
                     return new Windranger();
@@ -54,8 +54,8 @@ namespace DotaCardGame
         public static Spell GetSpell()
         {
             var rnd = new Random();
-            var value = rnd.Next(1, 6);
-            switch (value)
+            var value = rnd.Next(1, 6); // Получаем случайное число.
+            switch (value) // Возвращаем спелл с помощью этого случайного числа.
             {
                 case 1:
                     return new HealingSalve();

@@ -7,10 +7,10 @@ namespace DotaCardGame
         public static void Main(string[] args)
         {
             PrintDescription();
-            var player1 = new Player(1, Convert.ToBoolean(0));
+            var player1 = new Player(1, Convert.ToBoolean(0)); // Создаем двух игроков, параметры: номер игрока, AI ли это? 
             var player2 = new Player(2, Convert.ToBoolean(1));
-            var game = new Game();
-            Game.StartGame(player1, player2);
+            var game = new Game(); // Создаем игру, запускаем.
+            Game.StartGame(player1, player2); 
         }
 
         public static void PrintDescription()

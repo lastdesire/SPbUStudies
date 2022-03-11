@@ -2,7 +2,7 @@ using System;
 
 namespace DotaCardGame
 {
-    public abstract class Target
+    public abstract class Target // Абстрактный класс, от которого наследуются персонажи (карточки) и сами игроки.
     {
         public int Hp { get; protected set; }
         protected string Name { get; set; }
@@ -14,7 +14,7 @@ namespace DotaCardGame
         }
     }
 
-    public abstract class Character : Target
+    public abstract class Character : Target // Абстрактный класс, от которого наследуются конкретные персонажи.
     {
         public abstract int BaseDamage { get; }
         public int Mana { get; private set; }
@@ -58,13 +58,13 @@ namespace DotaCardGame
         }
     }
 
-    public class Player : Target
+    public class Player : Target // Класс, с помощью которого создаем объекты -- самих игроков.
     {
         public int Number { get; }
-        public readonly Character[] Fields = new Character[3];
-        public readonly Character[] Inventory = new Character[8];
-        public Spell SpellPocket;
-        public bool IsAi { get; }
+        public readonly Character[] Fields = new Character[3]; // Всего три поля на столе.
+        public readonly Character[] Inventory = new Character[8]; // Всего не больше 8 карт в инвентаре.
+        public Spell SpellPocket; // Всего один спелл.
+        public bool IsAi { get; } // Переменная, которая говорит нам о том, является ли игрок ИИ.
 
         public Player(int number, bool isAi)
         {

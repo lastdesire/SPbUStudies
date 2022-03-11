@@ -2,6 +2,7 @@ using System;
 
 namespace DotaCardGame
 {
+    // Ниже описаны классы, которые реализуют конкретных персонажей игры.
     public class Windranger : Character
     {
         public Windranger() : base("Windranger", 66, 44, 34)

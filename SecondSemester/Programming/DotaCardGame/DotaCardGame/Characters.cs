@@ -184,8 +184,8 @@ namespace DotaCardGame
             BurnMana(SkillManaCost);
             var savedTargetHp = target.Hp;
             var savedCharacterHp = Hp;
-            target.TakeDamage(9999);
-            target.HealHp(savedCharacterHp);
+            target.TakeDamage(savedTargetHp - 1);
+            target.HealHp(savedCharacterHp - 1);
             Hp = savedTargetHp;
         }
         public override void PrintSkillInfo()

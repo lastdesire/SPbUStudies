@@ -65,10 +65,10 @@ namespace DotaCardGame
         
         private static void PrintInfoAboutPlayers(Player player, Player enemy) // Печать информации об игроке.
         {
-            Console.WriteLine("Ваше хп: {0}, ваша мана: {1}", player.Hp, 0);
+            Console.WriteLine("Ваше хп: {0}", player.Hp);
             PrintInfoAboutFields(player);
             Console.WriteLine("");
-            Console.WriteLine("/Хп врага: {0}, мана врага: {1}/", enemy.Hp, 0);
+            Console.WriteLine("/Хп врага: {0}/", enemy.Hp);
             PrintInfoAboutFields(enemy);
             Console.WriteLine("");
         }
@@ -262,7 +262,7 @@ namespace DotaCardGame
             while (!answerIsNum)
             {
                 Console.WriteLine("(Важно: вводите числа, а также следите за диапазоном!)");
-                if (player.IsAi == Convert.ToBoolean(1))
+                if (player.IsAi)
                 {
                     Random rnd = new Random();
                     stringAnswer = (rnd.Next(0, 9)).ToString();
@@ -302,7 +302,7 @@ namespace DotaCardGame
             while (!answerIsNum)
             {
                 Console.WriteLine("(Важно: вводите число 0 или 1!)");
-                if (player.IsAi == Convert.ToBoolean(1))
+                if (player.IsAi)
                 {
                     var rnd = new Random();
                     return rnd.Next(0, 2);

@@ -43,6 +43,7 @@ def main():
         symbol = a.read(2)
     #text.append("<EOF>") #Добавляем <EOF>. 
     code = huffman_encode(text)
+    print(code)
     encoded = "".join(code[ch] for ch in text)
     print("Код Хаффмана:")
     for ch in sorted(code):

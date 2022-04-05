@@ -4,14 +4,14 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{CAD86203-6AB2-4AA1-8CDA-B3A5A7935A58}</ProjectGuid>
-        <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-        <OutputType>Library</OutputType>
+        <ProjectGuid>{0B7BD2E9-3E39-4260-8759-7A3F8694E1F3}</ProjectGuid>
+        <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>RingSinglyLinkedListTests</RootNamespace>
-        <AssemblyName>RingSinglyLinkedListTests</AssemblyName>
+        <RootNamespace>RingSinglyLinkedList</RootNamespace>
+        <AssemblyName>RingSinglyLinkedList</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,19 +37,11 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
-            <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
-        </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Tests.cs" />
+        <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\RingSinglyLinkedList\RingSinglyLinkedList.csproj">
-        <Project>{d0ff4234-01d4-4e79-aeea-469c0bb3e6b5}</Project>
-        <Name>RingSinglyLinkedList</Name>
-      </ProjectReference>
+        <Compile Include="CircleList.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

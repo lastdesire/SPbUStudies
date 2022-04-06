@@ -185,7 +185,7 @@ namespace Exceptions
                 Console.WriteLine(e.GetType());
                 Console.WriteLine(e.Message);
                 Console.WriteLine($"Метод: {e.TargetSite}");
-                Console.WriteLine("В файл нельзя ничего записывать!.");
+                Console.WriteLine("В файл нельзя ничего записывать!");
                 Console.WriteLine();
                 return false;
             }

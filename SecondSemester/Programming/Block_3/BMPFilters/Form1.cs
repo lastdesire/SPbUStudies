@@ -61,6 +61,7 @@ namespace BMPFilters
             Transparent.ApplyFilter(bitmap, trackBar1.Value);
             pictureBox1.Image = bitmap;
             _currentBitmap = (Bitmap)pictureBox1.Image;
+            Text = $"BMPFilters ({trackBar1.Value}%)";
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -190,7 +191,6 @@ namespace BMPFilters
             {
                 return;
             }
-
             var bitmap = new Bitmap(pictureBox1.Image);
 
 
@@ -200,6 +200,14 @@ namespace BMPFilters
             pictureBox1.Image = bitmap;
             _currentBitmap = (Bitmap)pictureBox1.Image;
             _currentFilter = Filters.GaussFilter;
+        }
+
+        private void Exit_Button_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            _currentBitmap = null;
+            _originalBitmap = null;
+            Application.Exit();
         }
     }
 }

@@ -31,7 +31,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.Sobel = new System.Windows.Forms.Button();
+            this.SobelY = new System.Windows.Forms.Button();
+            this.SobelX = new System.Windows.Forms.Button();
             this.Gauss = new System.Windows.Forms.Button();
             this.Median = new System.Windows.Forms.Button();
             this.Gray = new System.Windows.Forms.Button();
@@ -102,7 +103,8 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.Sobel);
+            this.splitContainer2.Panel1.Controls.Add(this.SobelY);
+            this.splitContainer2.Panel1.Controls.Add(this.SobelX);
             this.splitContainer2.Panel1.Controls.Add(this.Gauss);
             this.splitContainer2.Panel1.Controls.Add(this.Median);
             this.splitContainer2.Panel1.Controls.Add(this.Gray);
@@ -119,15 +121,25 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
-            // Sobel
+            // SobelY
             // 
-            this.Sobel.Location = new System.Drawing.Point(526, 12);
-            this.Sobel.Name = "Sobel";
-            this.Sobel.Size = new System.Drawing.Size(470, 35);
-            this.Sobel.TabIndex = 3;
-            this.Sobel.Text = "Sobel";
-            this.Sobel.UseVisualStyleBackColor = true;
-            this.Sobel.Click += new System.EventHandler(this.Sobel_Click);
+            this.SobelY.Location = new System.Drawing.Point(779, 11);
+            this.SobelY.Name = "SobelY";
+            this.SobelY.Size = new System.Drawing.Size(215, 35);
+            this.SobelY.TabIndex = 4;
+            this.SobelY.Text = "SobelY";
+            this.SobelY.UseVisualStyleBackColor = true;
+            this.SobelY.Click += new System.EventHandler(this.SobelY_Click);
+            // 
+            // SobelX
+            // 
+            this.SobelX.Location = new System.Drawing.Point(526, 12);
+            this.SobelX.Name = "SobelX";
+            this.SobelX.Size = new System.Drawing.Size(215, 35);
+            this.SobelX.TabIndex = 3;
+            this.SobelX.Text = "SobelX";
+            this.SobelX.UseVisualStyleBackColor = true;
+            this.SobelX.Click += new System.EventHandler(this.SobelX_Click);
             // 
             // Gauss
             // 
@@ -137,6 +149,7 @@
             this.Gauss.TabIndex = 3;
             this.Gauss.Text = "Gauss";
             this.Gauss.UseVisualStyleBackColor = true;
+            this.Gauss.Click += new System.EventHandler(this.Gauss_Click);
             // 
             // Median
             // 
@@ -190,14 +203,14 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
@@ -267,8 +280,9 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button Median;
-        private System.Windows.Forms.Button Sobel;
+        private System.Windows.Forms.Button SobelX;
         private System.Windows.Forms.Button Gauss;
+        private System.Windows.Forms.Button SobelY;
     }
 }
 

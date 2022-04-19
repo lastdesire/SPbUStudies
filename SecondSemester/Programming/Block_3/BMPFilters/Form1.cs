@@ -15,7 +15,9 @@ namespace BMPFilters
         NoFilter,
         GrayFilter,
         MedianFilter,
-        ETC
+        SobelXFilter,
+        SobelYFilter,
+        GaussFilter
     }
 
     public partial class Form1 : Form
@@ -146,10 +148,58 @@ namespace BMPFilters
             _currentFilter = Filters.MedianFilter;
         }
 
-        private void Sobel_Click(object sender, EventArgs e)
+        private void SobelY_Click(object sender, EventArgs e)
         {
+            if (pictureBox1.Image == null)
+            {
+                return;
+            }
 
+            var bitmap = new Bitmap(pictureBox1.Image);
+
+
+            SobelFilter.ApplyFilter(bitmap, SobelFilterType.SobelY);
+            Transparent.ApplyFilter(bitmap, trackBar1.Value);
+
+            pictureBox1.Image = bitmap;
+            _currentBitmap = (Bitmap)pictureBox1.Image;
+            _currentFilter = Filters.SobelYFilter;
         }
 
+        private void SobelX_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null)
+            {
+                return;
+            }
+
+            var bitmap = new Bitmap(pictureBox1.Image);
+
+
+            SobelFilter.ApplyFilter(bitmap, SobelFilterType.SobelX);
+            Transparent.ApplyFilter(bitmap, trackBar1.Value);
+
+            pictureBox1.Image = bitmap;
+            _currentBitmap = (Bitmap)pictureBox1.Image;
+            _currentFilter = Filters.SobelXFilter;
+        }
+
+        private void Gauss_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null)
+            {
+                return;
+            }
+
+            var bitmap = new Bitmap(pictureBox1.Image);
+
+
+            GaussFilter.ApplyFilter(bitmap);
+            Transparent.ApplyFilter(bitmap, trackBar1.Value);
+
+            pictureBox1.Image = bitmap;
+            _currentBitmap = (Bitmap)pictureBox1.Image;
+            _currentFilter = Filters.GaussFilter;
+        }
     }
 }

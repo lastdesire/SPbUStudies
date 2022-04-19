@@ -74,7 +74,7 @@ namespace BMPFilters
             Transparent.ApplyFilter(bitmap, trackBar1.Value);
             pictureBox1.Image = bitmap;
             */
-
+            //
 
         }
 

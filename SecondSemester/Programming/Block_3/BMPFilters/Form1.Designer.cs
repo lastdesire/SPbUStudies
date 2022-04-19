@@ -31,9 +31,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.Sobel = new System.Windows.Forms.Button();
-            this.Gauss = new System.Windows.Forms.Button();
-            this.Median = new System.Windows.Forms.Button();
             this.Gray = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -102,9 +99,6 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.Sobel);
-            this.splitContainer2.Panel1.Controls.Add(this.Gauss);
-            this.splitContainer2.Panel1.Controls.Add(this.Median);
             this.splitContainer2.Panel1.Controls.Add(this.Gray);
             this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
@@ -119,54 +113,25 @@
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
-            // Sobel
-            // 
-            this.Sobel.Location = new System.Drawing.Point(526, 12);
-            this.Sobel.Name = "Sobel";
-            this.Sobel.Size = new System.Drawing.Size(470, 35);
-            this.Sobel.TabIndex = 3;
-            this.Sobel.Text = "Sobel";
-            this.Sobel.UseVisualStyleBackColor = true;
-            this.Sobel.Click += new System.EventHandler(this.Sobel_Click);
-            // 
-            // Gauss
-            // 
-            this.Gauss.Location = new System.Drawing.Point(526, 53);
-            this.Gauss.Name = "Gauss";
-            this.Gauss.Size = new System.Drawing.Size(470, 35);
-            this.Gauss.TabIndex = 3;
-            this.Gauss.Text = "Gauss";
-            this.Gauss.UseVisualStyleBackColor = true;
-            // 
-            // Median
-            // 
-            this.Median.Location = new System.Drawing.Point(13, 53);
-            this.Median.Name = "Median";
-            this.Median.Size = new System.Drawing.Size(470, 35);
-            this.Median.TabIndex = 1;
-            this.Median.Text = "Median";
-            this.Median.UseVisualStyleBackColor = true;
-            this.Median.Click += new System.EventHandler(this.Median_Click);
-            // 
             // Gray
             // 
-            this.Gray.Location = new System.Drawing.Point(13, 12);
+            this.Gray.Location = new System.Drawing.Point(460, 38);
             this.Gray.Name = "Gray";
-            this.Gray.Size = new System.Drawing.Size(470, 35);
+            this.Gray.Size = new System.Drawing.Size(75, 23);
             this.Gray.TabIndex = 0;
             this.Gray.Text = "Gray";
             this.Gray.UseVisualStyleBackColor = true;
-            this.Gray.Click += new System.EventHandler(this.Gray_Click);
+            this.Gray.Click += new System.EventHandler(this.gray_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 11);
+            this.button1.Location = new System.Drawing.Point(41, 17);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 77);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Original";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Original_Click);
+            this.button1.Click += new System.EventHandler(this.original_Click);
             // 
             // menuStrip1
             // 
@@ -190,16 +155,16 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
-            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // trackBar1
             // 
@@ -213,7 +178,7 @@
             this.trackBar1.TabIndex = 0;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar1.Value = 100;
-            this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // openFileDialog1
             // 
@@ -266,9 +231,6 @@
         private System.Windows.Forms.Button Gray;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Button Median;
-        private System.Windows.Forms.Button Sobel;
-        private System.Windows.Forms.Button Gauss;
     }
 }
 

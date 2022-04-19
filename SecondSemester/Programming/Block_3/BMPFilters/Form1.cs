@@ -49,7 +49,7 @@ namespace BMPFilters
 
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e) // Метод, отвечающий за корректную работу скролл-бара (прозрачность картинки).
+        private void TrackBar1_Scroll(object sender, EventArgs e) // Метод, отвечающий за корректную работу скролл-бара (прозрачность картинки).
         {
             if (pictureBox1.Image == null)
             {
@@ -71,10 +71,7 @@ namespace BMPFilters
 
         }
 
-
-
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e) // Метод, отвечающий за корректное открытие файла.
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // Метод, отвечающий за корректное открытие файла.
         {
             if (openFileDialog1.ShowDialog() != DialogResult.OK)
             {
@@ -82,15 +79,14 @@ namespace BMPFilters
             }
             pictureBox1.Image = null;
             _currentFilter = Filters.NoFilter;
-            
+
             var bitmap = new Bitmap(openFileDialog1.FileName);
 
             pictureBox1.Image = bitmap;
             _currentBitmap = (Bitmap)pictureBox1.Image;
             _originalBitmap = new Bitmap(bitmap);
         }
-
-        private void gray_Click(object sender, EventArgs e) // Метод, реализующийся при нажатии кнопки "Gray" (Применение фильтра).
+        private void Gray_Click(object sender, EventArgs e) // Метод, реализующийся при нажатии кнопки "Gray" (Применение фильтра).
         {
             if (pictureBox1.Image == null)
             {
@@ -107,7 +103,7 @@ namespace BMPFilters
             _currentFilter = Filters.GrayFilter;
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e) // Метод, отвечающий за корректное сохранение файла.
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e) // Метод, отвечающий за корректное сохранение файла.
         {
             if (pictureBox1.Image == null)
             {
@@ -121,8 +117,7 @@ namespace BMPFilters
             pictureBox1.Image.Save(filename);
 
         }
-
-        private void original_Click(object sender, EventArgs e) // Метод, реализующийся при нажатии кнопки "Original" (Возвращение оригинальной картинки).
+        private void Original_Click(object sender, EventArgs e) // Метод, реализующийся при нажатии кнопки "Original" (Возвращение оригинальной картинки).
         {
             if (pictureBox1.Image == null)
             {
@@ -133,5 +128,28 @@ namespace BMPFilters
             _currentBitmap = (Bitmap)pictureBox1.Image;
             _currentFilter = Filters.NoFilter;
         }
+
+        private void Median_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null)
+            {
+                return;
+            }
+
+            var bitmap = new Bitmap(pictureBox1.Image);
+
+            MedianFilter.ApplyFilter(bitmap);
+            Transparent.ApplyFilter(bitmap, trackBar1.Value);
+
+            pictureBox1.Image = bitmap;
+            _currentBitmap = (Bitmap)pictureBox1.Image;
+            _currentFilter = Filters.MedianFilter;
+        }
+
+        private void Sobel_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

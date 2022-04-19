@@ -1,61 +1,42 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
+using System;
 
 namespace BMPFilters
 {
     public static class MedianFilter
     {
-     
-        /*
-        public static Bitmap qApplyFilter(Bitmap bitmap)
+        public static void ApplyFilter(Bitmap newBitmap) // Усредняющий фильтр 3х3.
         {
-            var newBitmap = new Bitmap(bitmap);
 
-            for (var x = 0; x < newBitmap.Width; x++)
+            for (var x = 1; x < newBitmap.Width - 1; x++)
             {
-                for (var y = 0; y < newBitmap.Height; y++)
+                for (var y = 1; y < newBitmap.Height - 1; y++)
                 {
-                    var pixel = newBitmap.GetPixel(x, y);
-                    var color = (int)(pixel.B * BCoefficient + pixel.G * GCoefficient + pixel.R * RCoefficient);
-                    var newColor = Color.FromArgb(color, color, color);
+                    var pixels = new Color[9];
+                    var pixelsR = new int[9];
+                    var pixelsG = new int[9];
+                    var pixelsB = new int[9];
+                    var counter = 0;
+                    for (var i = 0; i < 3; i++)
+                    {
+                        for (var j = 0; j < 3; j++)
+                        {
+                            pixels[counter] = newBitmap.GetPixel(x - 1 + i, y - 1 + j);
+                            pixelsR[counter] = pixels[counter].R;
+                            pixelsG[counter] = pixels[counter].G;
+                            pixelsB[counter] = pixels[counter].B;
+                            counter++;
+                        }
+                    }
+                    Array.Sort(pixelsR);
+                    Array.Sort(pixelsG);
+                    Array.Sort(pixelsB);
+                    var newColor = Color.FromArgb(pixelsR[4], pixelsG[4], pixelsB[4]);
                     newBitmap.SetPixel(x, y, newColor);
                 }
             }
-
-            return newBitmap;
         }
-
-        public unsafe static Bitmap ApplyFilter(Bitmap bitmap)
-        {
-            Bitmap b = new Bitmap(bitmap);//note this has several overloads, including a path to an image
-
-            BitmapData bData = b.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, b.PixelFormat);
-
-
-            byte bitsPerPixel = (byte)Image.GetPixelFormatSize(bData.PixelFormat);
-
-
-            
-            byte* scan0 = (byte*)bData.Scan0.ToPointer();
-
-            for (int i = 0; i < bData.Height; ++i)
-            {
-                for (int j = 0; j < bData.Width; ++j)
-                {
-                    byte* data = scan0 + i * bData.Stride + j * bitsPerPixel / 8;
-
-                    //data is a pointer to the first byte of the 3-byte color data
-                    var color = (byte)(data[0] * BCoefficient + data[1] * GCoefficient + data[2] * RCoefficient);
-                    data[0] = color;
-                    data[1] = color;
-                    data[2] = color;
-                }
-            }
-
-            b.UnlockBits(bData);
-
-            return b;
-        }*/
 
     }
 }

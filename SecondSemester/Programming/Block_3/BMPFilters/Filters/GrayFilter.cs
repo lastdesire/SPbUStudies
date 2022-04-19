@@ -3,13 +3,13 @@ using System.Drawing.Imaging;
 
 namespace BMPFilters
 {
-    public static class GrayFilter
+    public static class GrayFilter 
     {
         private const double RCoefficient = 0.3;
-        private const double GCoefficient = 0.59;
-        private const double BCoefficient = 0.11;
+        private const double GCoefficient = 0.6;
+        private const double BCoefficient = 0.1;
 
-        public static void ApplyFilter(Bitmap newBitmap)
+        public static void ApplyFilter(Bitmap newBitmap) // Перевод изображения из цветного в оттенки серого.
         {
 
             for (var x = 0; x < newBitmap.Width; x++)

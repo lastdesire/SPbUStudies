@@ -4,3 +4,4 @@
 *.suo
 *.cache
 *.json
+*.sqlite-journal

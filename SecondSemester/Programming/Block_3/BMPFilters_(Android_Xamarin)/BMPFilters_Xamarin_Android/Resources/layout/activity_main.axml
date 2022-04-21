@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" xmlns:class="MainActivity"
+                xmlns:namespace="BMPFilters_Xamarin_Android"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:background="#3B3B3B" android:backgroundTint="#517491">
+    <ImageView android:id="@+id/myImage4"
+               android:src="@drawable/picture_median"
+               android:transitionName="@+name/myImage"
+               android:layout_width="300dp"
+               android:layout_height="300dp" android:layout_y="79dp" android:layout_x="26dp"
+               tools:visibility="visible" android:visibility="visible">
+    </ImageView>
+    <ImageView android:id="@+id/myImage5"
+               android:src="@drawable/picture_gray"
+               android:transitionName="@+name/myImage"
+               android:layout_width="300dp"
+               android:layout_height="300dp" android:layout_y="79dp" android:layout_x="26dp"
+               tools:visibility="visible" android:visibility="visible">
+    </ImageView>
+    <ImageView android:id="@+id/myImage6"
+               android:src="@drawable/picture_gauss"
+               android:transitionName="@+name/myImage"
+               android:layout_width="300dp"
+               android:layout_height="300dp" android:layout_y="79dp" android:layout_x="26dp"
+               tools:visibility="visible" android:visibility="visible">
+    </ImageView>
+    <Button
+            android:text="SOBELY"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content" android:id="@+id/button4" android:layout_y="396dp"
+            android:layout_x="179dp" tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,TextContrastCheck"
+            android:textSize="30dp"
+            android:background="#122832" android:textColor="#E1DCDC">
+    </Button>
+    <Button
+            android:text="SOBELX"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content" android:id="@+id/button5" android:layout_y="445dp"
+            android:layout_x="16dp" tools:ignore="DuplicateSpeakableTextCheck" android:textSize="30dp"
+            android:background="#122832" android:textColor="#E1DCDC">
+    </Button>
+    <Button
+            android:text="Original"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content" android:id="@+id/button1" android:layout_y="396dp"
+            android:layout_x="16dp" tools:ignore="DuplicateSpeakableTextCheck" android:textSize="30dp"
+            android:background="#122832" android:textColor="#E1DCDC">
+    </Button>
+    <Button
+            android:text="MEDIAN"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content" android:id="@+id/button6" android:layout_y="445dp"
+            android:layout_x="179dp" tools:ignore="DuplicateSpeakableTextCheck" android:textSize="30dp"
+            android:background="#122832" android:textColor="#E1DCDC">
+    </Button>
+    <Button
+            android:text="GAUSS"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content" android:id="@+id/button8" android:layout_y="494dp"
+            android:layout_x="179dp" tools:ignore="DuplicateSpeakableTextCheck" android:textSize="30dp"
+            android:background="#122832" android:textColor="#E1DCDC">
+    </Button>
+    <Button
+            android:text="GRAY"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content" android:id="@+id/button7" android:layout_y="494dp"
+            android:layout_x="16dp" tools:ignore="DuplicateSpeakableTextCheck" android:textSize="30dp"
+            android:background="#122832" android:textColor="#E1DCDC">
+    </Button>
+    <ImageView android:id="@+id/myImage"
+               android:src="@drawable/picture"
+               android:transitionName="@+name/myImage"
+               android:layout_width="300dp"
+               android:layout_height="300dp" android:layout_y="79dp" android:layout_x="26dp"
+               tools:visibility="visible" android:visibility="visible">
+    </ImageView>
+    <ImageView android:id="@+id/myImage2"
+               android:src="@drawable/picture_sobely"
+               android:transitionName="@+name/myImage"
+               android:layout_width="300dp"
+               android:layout_height="300dp" android:layout_y="79dp" android:layout_x="26dp"
+               tools:visibility="visible" android:visibility="visible">
+    </ImageView>
+    <ImageView android:id="@+id/myImage3"
+               android:src="@drawable/picture_sobelx"
+               android:transitionName="@+name/myImage"
+               android:layout_width="300dp"
+               android:layout_height="300dp" android:layout_y="79dp" android:layout_x="26dp"
+               tools:visibility="visible" android:visibility="visible">
+    </ImageView>
+    <Button
+            android:text="about"
+            android:layout_width="40dp"
+            android:layout_height="40dp" android:layout_y="548dp" android:layout_x="294dp"
+            android:id="@+id/button10" android:textSize="10dp" android:background="#122832"
+            android:textColor="#E1DCDC" android:gravity="center"/>
+
+</AbsoluteLayout>

@@ -10,12 +10,11 @@ namespace BMPFilters_Console
         static void Main(string[] args)
         {
             Console.WriteLine("Данная программа применяет фильтры к картинке, путь к которой вы укажите, а также устанавливает заданную прозрачность.");
-            
+
             bool flag = true;
             FileStream fileInput = null;
             FileStream fileOutput = null;
             string chosenFilter = "";
-            int transparent = 0;
             // Организовываем корректный ввод от пользователя с помощью цикла и флага, который сигнализирует о том, что ввод не является корректным. 
             while (flag)
             {
@@ -34,15 +33,6 @@ namespace BMPFilters_Console
                     !chosenFilter.Equals("sobely"))
                 {
                     Console.WriteLine("Введенного вами фильтра не существует, повторите ввод с самого начала:");
-                    flag = true;
-                    continue;
-                }
-                // Прозрачность.
-                Console.WriteLine("Выберите прозрачность в пределах от 1 до 100%, где 100% -- максимально непрозрачная картинка (знак % вводить не нужно).");
-                var isCorrectTransparent = Int32.TryParse(Console.ReadLine(), out transparent);
-                if (!isCorrectTransparent || transparent < 1 || transparent > 100)
-                {
-                    Console.WriteLine("Прозрачность не была введенна корректно, повторите ввод с самого начала:");
                     flag = true;
                     continue;
                 }
@@ -107,15 +97,12 @@ namespace BMPFilters_Console
                 SobelFilter.ApplyFilter(bitmap, SobelFilterType.SobelY);
             }
 
-            // Устанавливаем выбранную прозрачность.
-            Transparent.ApplyFilter(bitmap, transparent);
-
             // Записываем результат и закрываем файлы.
             fileInput.Close();
             bitmap.Save(fileOutput, System.Drawing.Imaging.ImageFormat.Bmp);
             fileOutput.Close();
         }
 
-        
+
     }
 }

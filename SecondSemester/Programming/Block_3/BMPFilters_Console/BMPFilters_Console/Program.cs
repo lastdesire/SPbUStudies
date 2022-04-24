@@ -22,14 +22,13 @@ namespace BMPFilters_Console
 
                 // Выбор нужного фильтра.
                 Console.WriteLine("Чтобы выбрать фильтр, введите его название в консоль:");
-                Console.WriteLine("Без фильтра -- standard");
                 Console.WriteLine("Перевод в оттенки серого -- gray");
                 Console.WriteLine("Усредняющий фильтр 3x3 -- median");
                 Console.WriteLine("Усредняющий фильтр Гаусса 3x3 -- gauss");
                 Console.WriteLine("Фильтр Собеля по X -- sobelx");
                 Console.WriteLine("Фильтр Собеля по Y -- sobely");
                 chosenFilter = Console.ReadLine();
-                if (!chosenFilter.Equals("standard") && !chosenFilter.Equals("gray") && !chosenFilter.Equals("median") && !chosenFilter.Equals("gauss") && !chosenFilter.Equals("sobelx") &&
+                if (!chosenFilter.Equals("gray") && !chosenFilter.Equals("median") && !chosenFilter.Equals("gauss") && !chosenFilter.Equals("sobelx") &&
                     !chosenFilter.Equals("sobely"))
                 {
                     Console.WriteLine("Введенного вами фильтра не существует, повторите ввод с самого начала:");
@@ -73,10 +72,7 @@ namespace BMPFilters_Console
 
             // Применяем выбранный фильтр.
             var bitmap = new Bitmap(fileInput);
-            if (chosenFilter.Equals("standard"))
-            {
-            }
-            else if (chosenFilter.Equals("gray"))
+            if (chosenFilter.Equals("gray"))
             {
                 GrayFilter.ApplyFilter(bitmap);
             }

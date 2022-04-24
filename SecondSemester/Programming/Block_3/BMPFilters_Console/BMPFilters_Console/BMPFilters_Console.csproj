@@ -51,7 +51,6 @@
     <Compile Include="Filters\GrayFilter.cs" />
     <Compile Include="Filters\MedianFilter.cs" />
     <Compile Include="Filters\SobelFilter.cs" />
-    <Compile Include="Filters\Transparent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMPFilters_Console", "BMPFilters_Console\BMPFilters_Console.csproj", "{3177DE5B-E91F-41EC-920E-D4D7B37ADBBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMPFilters_ConsoleTests", "BMPFilters_ConsoleTests\BMPFilters_ConsoleTests.csproj", "{2F228FE9-391F-4C78-A072-4355866DA231}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3177DE5B-E91F-41EC-920E-D4D7B37ADBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3177DE5B-E91F-41EC-920E-D4D7B37ADBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3177DE5B-E91F-41EC-920E-D4D7B37ADBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F228FE9-391F-4C78-A072-4355866DA231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F228FE9-391F-4C78-A072-4355866DA231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F228FE9-391F-4C78-A072-4355866DA231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F228FE9-391F-4C78-A072-4355866DA231}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

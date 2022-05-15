@@ -1,0 +1,7 @@
+
+.DS_Store
+*.sqlite
+*.suo
+*.cache
+*.json
+*.sqlite-journal

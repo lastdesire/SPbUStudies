@@ -97,7 +97,7 @@ namespace WeatherWindowsFormsApp
 
             label10.Text = (0.507 * wA.current.temp_c + 0.482 * wI.data[0].temp).ToString("0.##") + "° ";
 
-            chart1.Series[0].Points.AddXY(wA.location.localtime.Substring(11, 5), oW.Main.Temp.ToString("0.##"));
+            chart1.Series[0].Points.AddXY(wA.location.localtime, oW.Main.Temp.ToString("0.##"));
         }
 
         private void Timer1_Tick(object sender, EventArgs e)

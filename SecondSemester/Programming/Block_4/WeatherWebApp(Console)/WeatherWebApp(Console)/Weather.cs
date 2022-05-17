@@ -31,7 +31,7 @@ namespace WeatherWebApp_Console_
             var wA = Response<WeatherApi.WeatherApi>.GetResponse(wAUrl).Result;
             var wI = Response<WeatherbitIo.WeatherbitIo>.GetResponse(wIUrl).Result;
             
-            WeatherInfo[(int)WeatherVariables.MainWeather] = String.Copy(oW.Weather[0].Main);
+            WeatherInfo[(int)WeatherVariables.MainWeather] = oW.Weather[0].Main;
 
             WeatherInfo[(int)WeatherVariables.WeatherDescription] = "(" + oW.Weather[0].Description + ")";
 
@@ -39,9 +39,9 @@ namespace WeatherWebApp_Console_
 
             WeatherInfo[(int)WeatherVariables.WindSpeed] = "Speed: " + oW.Wind.Speed.ToString() + " (m/s)";
 
-            WeatherInfo[(int)WeatherVariables.WindDirection] = String.Copy("Direction: " + oW.Wind.Deg.ToString());
+            WeatherInfo[(int)WeatherVariables.WindDirection] = "Direction: " + oW.Wind.Deg.ToString();
             
-            WeatherInfo[(int)WeatherVariables.CurrTime] = String.Copy(wA.location.localtime);
+            WeatherInfo[(int)WeatherVariables.CurrTime] = wA.location.localtime;
 
             WeatherInfo[(int)WeatherVariables.Correlation] = (0.507 * wA.current.temp_c + 0.482 * wI.data[0].temp).ToString("0.##") + "° ";
             

@@ -29,56 +29,75 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.groupBoxWeather = new System.Windows.Forms.GroupBox();
+            this.correlation = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.currTime = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.mainWeather = new System.Windows.Forms.Label();
+            this.groupBoxWind = new System.Windows.Forms.GroupBox();
+            this.windSpeed = new System.Windows.Forms.Label();
+            this.windDirection = new System.Windows.Forms.Label();
+            this.averageTemp = new System.Windows.Forms.Label();
+            this.weatherDescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.temperatureChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBoxWeather.SuspendLayout();
+            this.groupBoxWind.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temperatureChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxWeather
             // 
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 274);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Weather";
+            this.groupBoxWeather.Controls.Add(this.correlation);
+            this.groupBoxWeather.Controls.Add(this.label9);
+            this.groupBoxWeather.Controls.Add(this.currTime);
+            this.groupBoxWeather.Controls.Add(this.label7);
+            this.groupBoxWeather.Controls.Add(this.mainWeather);
+            this.groupBoxWeather.Controls.Add(this.groupBoxWind);
+            this.groupBoxWeather.Controls.Add(this.averageTemp);
+            this.groupBoxWeather.Controls.Add(this.weatherDescription);
+            this.groupBoxWeather.Controls.Add(this.label1);
+            this.groupBoxWeather.Controls.Add(this.panel1);
+            this.groupBoxWeather.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxWeather.Name = "groupBoxWeather";
+            this.groupBoxWeather.Size = new System.Drawing.Size(250, 274);
+            this.groupBoxWeather.TabIndex = 1;
+            this.groupBoxWeather.TabStop = false;
+            this.groupBoxWeather.Text = "Weather";
             // 
-            // label8
+            // correlation
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(128, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "label8";
+            this.correlation.AutoSize = true;
+            this.correlation.Location = new System.Drawing.Point(162, 200);
+            this.correlation.Name = "correlation";
+            this.correlation.Size = new System.Drawing.Size(57, 13);
+            this.correlation.TabIndex = 8;
+            this.correlation.Text = "Correlation";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(159, 181);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Correlation result:";
+            // 
+            // currTime
+            // 
+            this.currTime.AutoSize = true;
+            this.currTime.Location = new System.Drawing.Point(128, 42);
+            this.currTime.Name = "currTime";
+            this.currTime.Size = new System.Drawing.Size(64, 13);
+            this.currTime.TabIndex = 6;
+            this.currTime.Text = "CurrentTime";
+            this.currTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label7
             // 
@@ -89,61 +108,61 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Last update:";
             // 
-            // label6
+            // mainWeather
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(128, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "label6";
+            this.mainWeather.AutoSize = true;
+            this.mainWeather.Location = new System.Drawing.Point(128, 83);
+            this.mainWeather.Name = "mainWeather";
+            this.mainWeather.Size = new System.Drawing.Size(71, 13);
+            this.mainWeather.TabIndex = 4;
+            this.mainWeather.Text = "MainWeather";
             // 
-            // groupBox2
+            // groupBoxWind
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(6, 161);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(149, 100);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Wind";
+            this.groupBoxWind.Controls.Add(this.windSpeed);
+            this.groupBoxWind.Controls.Add(this.windDirection);
+            this.groupBoxWind.Location = new System.Drawing.Point(6, 161);
+            this.groupBoxWind.Name = "groupBoxWind";
+            this.groupBoxWind.Size = new System.Drawing.Size(149, 100);
+            this.groupBoxWind.TabIndex = 0;
+            this.groupBoxWind.TabStop = false;
+            this.groupBoxWind.Text = "Wind";
             // 
-            // label4
+            // windSpeed
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
+            this.windSpeed.AutoSize = true;
+            this.windSpeed.Location = new System.Drawing.Point(9, 73);
+            this.windSpeed.Name = "windSpeed";
+            this.windSpeed.Size = new System.Drawing.Size(63, 13);
+            this.windSpeed.TabIndex = 4;
+            this.windSpeed.Text = "WindSpeed";
             // 
-            // label5
+            // windDirection
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "label5";
+            this.windDirection.AutoSize = true;
+            this.windDirection.Location = new System.Drawing.Point(9, 39);
+            this.windDirection.Name = "windDirection";
+            this.windDirection.Size = new System.Drawing.Size(74, 13);
+            this.windDirection.TabIndex = 0;
+            this.windDirection.Text = "WindDirection";
             // 
-            // label3
+            // averageTemp
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.averageTemp.AutoSize = true;
+            this.averageTemp.Location = new System.Drawing.Point(6, 132);
+            this.averageTemp.Name = "averageTemp";
+            this.averageTemp.Size = new System.Drawing.Size(107, 13);
+            this.averageTemp.TabIndex = 3;
+            this.averageTemp.Text = "AverageTemperature";
             // 
-            // label2
+            // weatherDescription
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(128, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.weatherDescription.AutoSize = true;
+            this.weatherDescription.Location = new System.Drawing.Point(128, 106);
+            this.weatherDescription.Name = "weatherDescription";
+            this.weatherDescription.Size = new System.Drawing.Size(101, 13);
+            this.weatherDescription.TabIndex = 2;
+            this.weatherDescription.Text = "WeatherDescription";
             // 
             // label1
             // 
@@ -168,78 +187,60 @@
             this.timer1.Interval = 300000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // chart1
+            // temperatureChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(287, 26);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series3.BorderWidth = 5;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Temperature";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(379, 247);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(159, 181);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Correlation result:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(162, 200);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "label10";
+            chartArea1.Name = "ChartArea1";
+            this.temperatureChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.temperatureChart.Legends.Add(legend1);
+            this.temperatureChart.Location = new System.Drawing.Point(287, 26);
+            this.temperatureChart.Name = "temperatureChart";
+            this.temperatureChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.BorderWidth = 5;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Temperature";
+            this.temperatureChart.Series.Add(series1);
+            this.temperatureChart.Size = new System.Drawing.Size(379, 247);
+            this.temperatureChart.TabIndex = 2;
+            this.temperatureChart.Text = "chart1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 294);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.temperatureChart);
+            this.Controls.Add(this.groupBoxWeather);
             this.Name = "Form1";
             this.Text = "Weather";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.groupBoxWeather.ResumeLayout(false);
+            this.groupBoxWeather.PerformLayout();
+            this.groupBoxWind.ResumeLayout(false);
+            this.groupBoxWind.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temperatureChart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBoxWeather;
+        private System.Windows.Forms.GroupBox groupBoxWind;
+        private System.Windows.Forms.Label windSpeed;
+        private System.Windows.Forms.Label averageTemp;
+        private System.Windows.Forms.Label weatherDescription;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label windDirection;
+        private System.Windows.Forms.Label mainWeather;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label currTime;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart temperatureChart;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label correlation;
     }
 }
 

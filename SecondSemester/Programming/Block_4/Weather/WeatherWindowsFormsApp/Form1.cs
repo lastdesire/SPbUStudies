@@ -83,21 +83,23 @@ namespace WeatherWindowsFormsApp
 
             panel1.BackgroundImage = oW.Weather[0].Icon;
 
-            label6.Text = oW.Weather[0].Main;
+            mainWeather.Text = oW.Weather[0].Main;
 
-            label2.Text = "(" + oW.Weather[0].Description + ")";
+            weatherDescription.Text = "(" + oW.Weather[0].Description + ")";
 
-            label3.Text = "Average temp: " + "OW: " + oW.Main.Temp.ToString("0.##") + "° " + "WA: " + wA.current.temp_c + "° " + "WI: " + wI.data[0].temp + "° ";
+            averageTemp.Text = "Average temp: " + "OW: " + oW.Main.Temp.ToString("0.##") + "° " + "WA: " + wA.current.temp_c + "° " + "WI: " + wI.data[0].temp + "° ";
 
-            label4.Text = "Speed: " + oW.Wind.Speed.ToString() + " (m/s)";
+            windSpeed.Text = "Speed: " + oW.Wind.Speed.ToString() + " (m/s)";
 
-            label5.Text = "Direction: " + oW.Wind.Deg.ToString();
+            windDirection.Text = "Direction: " + oW.Wind.Deg.ToString();
 
-            label8.Text = wA.location.localtime;
+            currTime.Text = wA.location.localtime;
 
-            label10.Text = (0.507 * wA.current.temp_c + 0.482 * wI.data[0].temp).ToString("0.##") + "° ";
+            correlation.Text = (0.507 * wA.current.temp_c + 0.482 * wI.data[0].temp).ToString("0.##") + "° ";
 
-            chart1.Series[0].Points.AddXY(wA.location.localtime, oW.Main.Temp.ToString("0.##"));
+            temperatureChart.Series[0].Points.AddXY(wA.location.localtime.Substring(11), oW.Main.Temp.ToString("0.##"));
+            
+            
         }
 
         private void Timer1_Tick(object sender, EventArgs e)

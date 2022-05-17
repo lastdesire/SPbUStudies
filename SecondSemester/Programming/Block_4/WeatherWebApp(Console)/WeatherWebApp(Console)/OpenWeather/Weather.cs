@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Drawing;
 using System;
 using System.IO;
 
@@ -19,6 +18,6 @@ namespace WeatherWebApp_Console_.OpenWeather
         [JsonProperty("icon")]
         public string IconId;
 
-        public Bitmap Icon;
+        public string Icon;
     }
 }

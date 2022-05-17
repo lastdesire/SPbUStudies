@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace WeatherWebApp_Console_
 {
-    enum WeatherVariables
+    public enum WeatherVariables
     {
         MainWeather,
         WeatherDescription,

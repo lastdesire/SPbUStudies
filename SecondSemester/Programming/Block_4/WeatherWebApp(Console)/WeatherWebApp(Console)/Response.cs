@@ -9,27 +9,27 @@ namespace WeatherWebApp_Console_
     {
         public static async Task<T> GetResponse(string url)
         {
-            var openWeatherRequest = WebRequest.Create(url);
-            openWeatherRequest.Method = "POST";
-            openWeatherRequest.ContentType = "application/x-www-urlencoded";
+            var weatherRequest = WebRequest.Create(url);
+            weatherRequest.Method = "POST";
+            weatherRequest.ContentType = "application/x-www-urlencoded";
 
-            var openWeatherResponse = await openWeatherRequest.GetResponseAsync();
+            var weatherResponse = await weatherRequest.GetResponseAsync();
 
-            var openWeatherAnswer = string.Empty;
+            var weatherAnswer = string.Empty;
 
-            using (Stream s = openWeatherResponse.GetResponseStream())
+            using (Stream s = weatherResponse.GetResponseStream())
             {
                 using (StreamReader reader = new StreamReader(s))
                 {
-                    openWeatherAnswer = await reader.ReadToEndAsync();
+                    weatherAnswer = await reader.ReadToEndAsync();
                 }
             }
 
-            openWeatherResponse.Close();
+            weatherResponse.Close();
 
-            T oW = JsonConvert.DeserializeObject<T>(openWeatherAnswer);
+            T result = JsonConvert.DeserializeObject<T>(weatherAnswer);
 
-            return oW;
+            return result;
         }
     }
 }

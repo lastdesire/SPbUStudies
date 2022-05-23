@@ -1,0 +1,15 @@
+/Users/noname/Projects/Bash/Bash/bin/Debug/net5.0/Bash.deps.json
+/Users/noname/Projects/Bash/Bash/bin/Debug/net5.0/Bash.runtimeconfig.json
+/Users/noname/Projects/Bash/Bash/bin/Debug/net5.0/Bash.runtimeconfig.dev.json
+/Users/noname/Projects/Bash/Bash/bin/Debug/net5.0/Bash.dll
+/Users/noname/Projects/Bash/Bash/bin/Debug/net5.0/ref/Bash.dll
+/Users/noname/Projects/Bash/Bash/bin/Debug/net5.0/Bash.pdb
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.csproj.AssemblyReference.cache
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.GeneratedMSBuildEditorConfig.editorconfig
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.AssemblyInfoInputs.cache
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.AssemblyInfo.cs
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.csproj.CoreCompileInputs.cache
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.dll
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/ref/Bash.dll
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.pdb
+/Users/noname/Projects/Bash/Bash/obj/Debug/net5.0/Bash.genruntimeconfig.cache

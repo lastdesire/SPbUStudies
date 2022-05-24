@@ -3,7 +3,7 @@ namespace Bash.Commands
 {
     public abstract class Command
     {
-        public string Name { get; protected set; }
+        public abstract string Name { get; protected set; }
         public abstract string[] Run(string[] args);
 
         public string[] Run()

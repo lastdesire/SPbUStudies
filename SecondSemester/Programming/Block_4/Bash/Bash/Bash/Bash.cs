@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Bash.BashOutput;
 using Bash.Commands;
+using System.Collections;
 
 namespace Bash.Bash
 {
     public class MyBash
     {
+        LocalVariables localVariables = new LocalVariables();
+
         private Logger _logger;
 
         public MyBash(Logger logger)
@@ -14,11 +18,13 @@ namespace Bash.Bash
             _logger = logger;
         }
 
-        public void RunCommand()
+        public void RunCommand(CommandParser commandParser)
         {
             var command = _logger.ReadCommand();
 
-            var commandParser = new CommandParser();
+            var atCommand = new AtCommand();
+            command = atCommand.Run(command, localVariables);
+
             commandParser.ParseCommand(command);
 
             var counter = 0;
@@ -30,7 +36,7 @@ namespace Bash.Bash
                     while (item.Split()[i] == "")
                     {
                         i++;
-                        if(item.Length == i)
+                        if (item.Length == i)
                         {
                             break;
                         }
@@ -39,23 +45,25 @@ namespace Bash.Bash
                 var currCommand = item.Split()[i];
 
                 var splittedArgs = item.Substring(currCommand.Length + i).Split();
+
                 var args = new List<string>();
-                foreach(var element in splittedArgs)
+                foreach (var element in splittedArgs)
                 {
                     if (element != "")
                     {
                         args.Add(element);
                     }
                 }
+
                 if (counter == 0)
                 {
-                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger);
+                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger, localVariables, commandParser);
                 }
                 else if (commandParser.Connectors[counter - 1 ] == ';' || (commandParser.Connectors[counter - 1] == '&'
-                    && commandParser.lastResult == true) || (commandParser.Connectors[counter - 1] == '|'
-                    && commandParser.lastResult == false))
+                    && Convert.ToBoolean(commandParser.lastResult) == false) || (commandParser.Connectors[counter - 1] == '|'
+                    && Convert.ToBoolean(commandParser.lastResult) == true))
                 {
-                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger);
+                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger, localVariables, commandParser);
                 }
                 counter++;
             }

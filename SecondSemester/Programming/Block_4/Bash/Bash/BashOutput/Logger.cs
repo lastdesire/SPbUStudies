@@ -15,10 +15,21 @@ namespace Bash.BashOutput
         public void PrintCommandResult(string[] result)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+
+            var counter = 1;
             foreach(var item in result)
             {
-                Console.Write(item + " ");
+                if (result.Length == counter)
+                {
+                    Console.Write(item.Substring(0, item.Length - 1));
+                }
+                else
+                {
+                    Console.Write(item);
+                }
+                counter++;
             }
+
             Console.WriteLine();
         }
 

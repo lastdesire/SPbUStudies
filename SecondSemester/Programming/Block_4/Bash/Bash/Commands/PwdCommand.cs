@@ -5,10 +5,7 @@ namespace Bash.Commands
 {
     public class PwdCommand : Command
     {
-        public PwdCommand()
-        {
-            Name = "pwd";
-        }
+        public override string Name { get; protected set; } = "pwd";
 
         public override string[] Run(string[] args)
         {
@@ -20,7 +17,7 @@ namespace Bash.Commands
             result.Add(currPath);
             foreach (var file in pathInfo.EnumerateFiles())
             {
-                result.Add(file.Name);
+                result.Add(file.Name + '\n');
             }
 
             return result.ToArray();

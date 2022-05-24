@@ -5,10 +5,7 @@ namespace Bash.Commands
 {
     public class EchoCommand : Command
     {
-        public EchoCommand()
-        {
-            Name = "echo";
-        }
+        public override string Name { get; protected set; } = "echo";
 
         public override string[] Run(string[] args)
         {
@@ -21,11 +18,10 @@ namespace Bash.Commands
                 {
                     if (element != "")
                     {
-                        result.Add(element);
+                        result.Add(element + ' ');
                     }
                 }
             }
-
             return result.ToArray();
         }
 

@@ -13,13 +13,16 @@ namespace Bash.Bash
     public class CommandParser
     {
         public List<string> Commands;
-        public bool lastResult;
+        public int lastResult;
+        public string[] lastWrite;
         public List<char> Connectors;
 
         public CommandParser()
         {
             Commands = new List<string>();
             Connectors = new List<char>();
+            lastResult = 0;
+            lastWrite = Array.Empty<string>();
         }
 
 
@@ -29,11 +32,27 @@ namespace Bash.Bash
             var command = new StringBuilder();
             foreach (var item in commands)
             {
-                if (item == ';' || item == '&' || item == '|')
+                if (item == '~')
+                {
+                    var strLastResult = lastResult.ToString();
+                    var len = strLastResult.Length;
+                    for(var i = 0; i < len; i++)
+                    {
+                        command.Append(strLastResult[i]);
+                    }
+                }
+                else if (item == ';' || item == '&' || item == '|')
                 {
                     Commands.Add(command.ToString());
                     command.Length = 0;
                     Connectors.Add(item);
+                }
+                else if (item == '>' || item == '\'')
+                {
+                    Commands.Add(command.ToString());
+                    command.Clear();
+                    command.Append(item);
+                    Connectors.Add('&');
                 }
                 else
                 {

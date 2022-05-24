@@ -12,9 +12,12 @@ namespace Bash
             var logger = new BashOutput.Logger();
             var bash = new MyBash(logger);
 
+            var commandParser = new CommandParser();
             while (true)
             {
-                bash.RunCommand();
+                commandParser.Connectors.Clear();
+                commandParser.Commands.Clear();
+                bash.RunCommand(commandParser);
             }
             Console.WriteLine();
         }

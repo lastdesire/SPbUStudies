@@ -21,7 +21,6 @@ namespace Bash.Bash
         public void RunCommand(CommandParser commandParser)
         {
             var command = _logger.ReadCommand();
-            Console.WriteLine("C:" + command);
 
             var atCommand = new AtCommand();
             command = atCommand.Run(command, localVariables);

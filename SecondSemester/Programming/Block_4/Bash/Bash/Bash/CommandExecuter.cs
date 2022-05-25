@@ -69,6 +69,16 @@ namespace Bash.Bash
                     logger.PrintCommandResult(writeCommand.Run(args, commandParser));
                     newLastResult = 0;
                     break;
+                case "cd":
+                    var cdCommand = new CdCommand();
+                    logger.PrintCommandResult(cdCommand.Run(args));
+                    newLastResult = 0;
+                    break;
+                case "exit":
+                    var exitCommand = new ExitCommand();
+                    exitCommand.Run();
+                    newLastResult = 0;
+                    break;
                 default:
                     logger.PrintCommandResult($"There is no command or path like this");
                     newLastResult = 127;

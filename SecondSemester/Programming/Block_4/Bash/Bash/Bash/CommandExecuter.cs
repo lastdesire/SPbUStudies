@@ -6,7 +6,7 @@ namespace Bash.Bash
 {
     public static class CommandExecuter
     {
-        public static int ExecuteCommand(string currCommand, string[] args, Logger logger, LocalVariables localVariables, CommandParser commandParser)
+        public static int ExecuteCommand(string currCommand, string[] args, Logger logger, LocalVariables localVariables, CommandParser commandParser, MyBash myBash)
         {
             int newLastResult;
             switch (currCommand)
@@ -70,7 +70,7 @@ namespace Bash.Bash
                     newLastResult = 0;
                     break;
                 default:
-                    logger.PrintCommandResult($"There is no command \"{currCommand}\"");
+                    logger.PrintCommandResult($"There is no command or path like this");
                     newLastResult = 127;
                     break;
             }

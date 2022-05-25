@@ -7,8 +7,7 @@ namespace Bash
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
+            Console.WriteLine("This is my own Bash analog. Please, read documentation before using this application. Thanks.");
             var logger = new BashOutput.Logger();
             var bash = new MyBash(logger);
 
@@ -19,7 +18,6 @@ namespace Bash
                 commandParser.Commands.Clear();
                 bash.RunCommand(commandParser);
             }
-            Console.WriteLine();
         }
     }
 }

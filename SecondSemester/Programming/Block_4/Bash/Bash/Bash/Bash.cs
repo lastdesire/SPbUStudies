@@ -21,6 +21,7 @@ namespace Bash.Bash
         public void RunCommand(CommandParser commandParser)
         {
             var command = _logger.ReadCommand();
+            Console.WriteLine("C:" + command);
 
             var atCommand = new AtCommand();
             command = atCommand.Run(command, localVariables);
@@ -57,13 +58,13 @@ namespace Bash.Bash
 
                 if (counter == 0)
                 {
-                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger, localVariables, commandParser);
+                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger, localVariables, commandParser, this);
                 }
                 else if (commandParser.Connectors[counter - 1 ] == ';' || (commandParser.Connectors[counter - 1] == '&'
                     && Convert.ToBoolean(commandParser.lastResult) == false) || (commandParser.Connectors[counter - 1] == '|'
                     && Convert.ToBoolean(commandParser.lastResult) == true))
                 {
-                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger, localVariables, commandParser);
+                    commandParser.lastResult = CommandExecuter.ExecuteCommand(currCommand, args.ToArray(), _logger, localVariables, commandParser, this);
                 }
                 counter++;
             }

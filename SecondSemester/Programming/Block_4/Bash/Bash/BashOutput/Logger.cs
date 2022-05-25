@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Bash.Bash;
 
 namespace Bash.BashOutput
 {
@@ -9,7 +10,20 @@ namespace Bash.BashOutput
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Directory:" + Directory.GetCurrentDirectory() + "$ ");
-            return Console.ReadLine();
+            var answer = Console.ReadLine();
+
+            if (answer.Equals("script"))
+            {
+                var scriptExecuter = new ScriptExecuter();
+                Console.WriteLine("Enter path:");
+                var path = Console.ReadLine();
+                var script = scriptExecuter.Run(path);
+                return script;
+            }
+            else
+            {
+                return answer;
+            }
         }
 
         public void PrintCommandResult(string[] result)

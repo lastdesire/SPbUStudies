@@ -8,5 +8,8 @@ namespace WeatherWebApp_Console_.WeatherbitIo
 {
     class Minutely
     {
+        public Minutely()
+        {
+        }
     }
 }

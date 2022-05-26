@@ -8,6 +8,13 @@ namespace WeatherWebApp_Console_.WeatherbitIo
 {
     class WeatherbitIo
     {
+        public WeatherbitIo()
+        {
+            data = new Data[1];
+            minutely = new Minutely[1];
+            count = 0;
+
+        }
         public Data[] data;
         public Minutely[] minutely;
         public int count;

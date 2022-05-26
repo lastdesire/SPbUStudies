@@ -22,14 +22,40 @@ namespace WeatherWebApp_Console_
 
         public async Task<string[]> GetWeather()
         {
-            //API keys
-            var oWUrl = "https://api.openweathermap.org/data/2.5/weather?id=498817&appid=741efa4783085ff52c374bcd9d5b8ce6";
-            var wAUrl = "http://api.weatherapi.com/v1/current.json?key=d53b823ad1374774be4130634221505&q=Saint&aqi=yes";
-            var wIUrl = "https://api.weatherbit.io/v2.0/current?lat=59.9342&lon=30.3350&key=2457bd232f554f64a7d7028f1f035639&include=minutely";
-            
-            var oW = Response<OpenWeather.OpenWeather>.GetResponse(oWUrl).Result;
-            var wA = Response<WeatherApi.WeatherApi>.GetResponse(wAUrl).Result;
-            var wI = Response<WeatherbitIo.WeatherbitIo>.GetResponse(wIUrl).Result;
+            OpenWeather.OpenWeather oW;
+            WeatherApi.WeatherApi wA;
+            WeatherbitIo.WeatherbitIo wI;
+
+            try
+            {
+                var oWUrl = "https://api.openweathermap.org/data/2.5/weather?id=498817&appid=741efa4783085ff52c374bcd9d5b8ce6";
+                oW = Response<OpenWeather.OpenWeather>.GetResponse(oWUrl).Result;
+            }
+            catch(Exception)
+            {
+                oW = new OpenWeather.OpenWeather();
+            }
+
+            try
+            {
+                var wAUrl = "http://api.weatherapi.com/v1/current.json?key=d53b823ad1374774be4130634221505&q=Saint&aqi=yes";
+                wA = Response<WeatherApi.WeatherApi>.GetResponse(wAUrl).Result;
+            }
+            catch (Exception)
+            {
+                wA = new WeatherApi.WeatherApi();
+            }
+
+            try
+            {
+                var wIUrl = "https://api.weatherbit.io/v2.0/current?lat=59.9342&lon=30.3350&key=2457bd232f554f64a7d7028f1f035639&include=minutely";
+                wI = Response<WeatherbitIo.WeatherbitIo>.GetResponse(wIUrl).Result;
+            }
+            catch (Exception)
+            {
+                wI = new WeatherbitIo.WeatherbitIo();
+            }
+
             
             WeatherInfo[(int)WeatherVariables.MainWeather] = oW.Weather[0].Main;
 

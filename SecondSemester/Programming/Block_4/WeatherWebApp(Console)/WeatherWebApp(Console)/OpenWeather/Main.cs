@@ -4,6 +4,21 @@ namespace WeatherWebApp_Console_.OpenWeather
 {
     class Main
     {
+        public Main()
+        {
+            _temp = 0;
+            Temp = 0;
+            _feels_like = 0;
+            Feels_Like = 0;
+            _temp_min = 0;
+            Temp_min = 0;
+            _temp_max = 0;
+            Temp_max = 0;
+            _pressure = 0;
+            Pressure = 0;
+            Humidity = 0;
+        }
+
         private double _temp;
 
         [JsonProperty("temp")]

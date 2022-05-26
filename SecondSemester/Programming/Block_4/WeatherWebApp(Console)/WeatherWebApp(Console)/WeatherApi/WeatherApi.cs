@@ -2,6 +2,11 @@
 {
     class WeatherApi
     {
+        public WeatherApi()
+        {
+            location = new Location();
+            current = new Current();
+        }
         public Location location;
 
         public Current current;

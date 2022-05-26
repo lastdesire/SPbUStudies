@@ -6,6 +6,15 @@ namespace WeatherWebApp_Console_.OpenWeather
 {
     class Weather
     {
+        public Weather()
+        {
+            Id = 0;
+            Main = string.Empty;
+            Description = string.Empty;
+            IconId = string.Empty;
+            Icon = string.Empty;
+        }
+
         [JsonProperty("id")]
         public int Id;
 

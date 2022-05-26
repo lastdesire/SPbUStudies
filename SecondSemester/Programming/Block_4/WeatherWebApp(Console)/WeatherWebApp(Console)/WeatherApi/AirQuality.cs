@@ -4,6 +4,18 @@ namespace WeatherWebApp_Console_.WeatherApi
 {
     class AirQuality
     {
+        public AirQuality()
+        {
+            co = 0;
+            no2 = 0;
+            o3 = 0;
+            so2 = 0;
+            pm2_5 = 0;
+            pm10 = 0;
+            us_epa_index = 0;
+            gb_defra_index = 0;
+        }
+
         public double co;
 
         public double no2;

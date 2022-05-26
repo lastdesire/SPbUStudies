@@ -4,6 +4,23 @@ namespace WeatherWebApp_Console_.OpenWeather
 {
     class OpenWeather
     {
+        public OpenWeather()
+        {
+            Coord = new Coord();
+            Weather = new Weather[1];
+            Base = string.Empty;
+            Main = new Main();
+            Visibility = 0;
+            Wind = new Wind();
+            Clouds = new Clouds();
+            Dt = 0;
+            Sys = new Sys();
+            Timezone = 0;
+            Id = 0;
+            Name = string.Empty;
+            Cod = 0;
+        }
+
         [JsonProperty("coord")]
         public Coord Coord;
 

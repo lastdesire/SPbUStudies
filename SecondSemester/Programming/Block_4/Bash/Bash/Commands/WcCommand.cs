@@ -24,7 +24,15 @@ namespace Bash.Commands
 					var text = new StringBuilder(File.ReadAllText(args[i]));
 
 					var linesCounter = 0;
-					var wordsCounter = text.ToString().Split(" ").Length;
+					var wordsCounter = 0;
+					var charArray = new char[2] { ' ', '\n' };
+					foreach (var word in text.ToString().Split(charArray))
+					{
+						if (!word.Equals("\n") && !word.Equals(" ") && !word.Equals(""))
+                        {
+							wordsCounter++;
+                        }
+					}
 					var bytesCounter = new FileInfo(args[i]).Length;
 
 					for (var ch = 0; ch < text.Length; ch++)

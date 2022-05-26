@@ -18,9 +18,9 @@ namespace Bash.Commands
                     result.Add(text);
 
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    result.Add("No such file or directory ");
+                    result.Add("No such file or directory\n");
                 }
             }
 

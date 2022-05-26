@@ -18,9 +18,12 @@ namespace Bash.Bash
             _logger = logger;
         }
 
-        public void RunCommand(CommandParser commandParser)
+        public void RunCommand(CommandParser commandParser, string command)
         {
-            var command = _logger.ReadCommand();
+            if (command.Equals(""))
+            {
+                command = _logger.ReadCommand();
+            }
 
             var atCommand = new AtCommand();
             command = atCommand.Run(command, localVariables);

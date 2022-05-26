@@ -24,7 +24,6 @@ namespace Bash.Commands
                     {
                         file.Write(commandParser.lastWrite[j]);
                     }
-                    file.Write('\n');
                     file.Dispose();
                 }
                 catch (Exception)

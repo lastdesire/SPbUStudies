@@ -14,7 +14,7 @@ namespace Bash.Commands
             var currPath = Directory.GetCurrentDirectory();
             var pathInfo = new DirectoryInfo(currPath);
 
-            result.Add(currPath);
+            result.Add(currPath + '\n');
             foreach (var file in pathInfo.EnumerateFiles())
             {
                 result.Add(file.Name + '\n');

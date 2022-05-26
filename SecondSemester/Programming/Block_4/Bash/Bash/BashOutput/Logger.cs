@@ -6,16 +6,24 @@ namespace Bash.BashOutput
 {
     public class Logger
     {
+        public string lastConsoleWrite = "";
+
         public string ReadCommand()
         {
             Console.ForegroundColor = ConsoleColor.White;
+
+            lastConsoleWrite = "";
+
             Console.Write("Directory:" + Directory.GetCurrentDirectory() + "$ ");
+
             var answer = Console.ReadLine();
 
             if (answer.Equals("script"))
             {
                 var scriptExecuter = new ScriptExecuter();
+
                 Console.WriteLine("Enter path:");
+
                 var path = Console.ReadLine();
                 var script = scriptExecuter.Run(path);
                 return script;
@@ -35,21 +43,25 @@ namespace Bash.BashOutput
             {
                 if (result.Length == counter)
                 {
+                    lastConsoleWrite += item.Substring(0, item.Length - 1);
                     Console.Write(item.Substring(0, item.Length - 1));
                 }
                 else
                 {
+                    lastConsoleWrite += item;
                     Console.Write(item);
                 }
                 counter++;
             }
 
+            lastConsoleWrite += '\n';
             Console.WriteLine();
         }
 
         public void PrintCommandResult(string result)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+            lastConsoleWrite += result + '\n';
             Console.WriteLine(result);
         }
     }

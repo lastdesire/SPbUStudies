@@ -8,7 +8,7 @@ namespace WeatherWebApp_Console_
         {
             var weather = new Weather();
             var taskWeatherInfo = weather.GetWeather();
-            var weatherInfo = taskWeatherInfo.Result;
+            var weatherInfo = taskWeatherInfo;
 
             Console.WriteLine("Weather in Saint Petersburg:");
 
@@ -24,8 +24,8 @@ namespace WeatherWebApp_Console_
 
             Console.WriteLine(weatherInfo[(int)WeatherVariables.CurrTime]);
 
-            Console.Write("Correlation: ");
-            Console.WriteLine(weatherInfo[(int)WeatherVariables.Correlation]);
+            Console.Write("Regression: ");
+            Console.WriteLine(weatherInfo[(int)WeatherVariables.Regression]);
 
             Console.Read();
         }

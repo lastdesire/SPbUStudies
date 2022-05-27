@@ -11,7 +11,7 @@ namespace WeatherWebApp_Console_
         WindSpeed,
         WindDirection,
         CurrTime,
-        Correlation,
+        Regression,
         Weather
 
     }
@@ -20,40 +20,41 @@ namespace WeatherWebApp_Console_
     {
         public string[] WeatherInfo = new string[8];
 
-        public async Task<string[]> GetWeather()
+        public  string[] GetWeather()
         {
-            OpenWeather.OpenWeather oW;
-            WeatherApi.WeatherApi wA;
-            WeatherbitIo.WeatherbitIo wI;
+            OpenWeather.OpenWeather oW = new OpenWeather.OpenWeather();
+            WeatherApi.WeatherApi wA = new WeatherApi.WeatherApi();
+            WeatherbitIo.WeatherbitIo wI = new WeatherbitIo.WeatherbitIo();
 
             try
             {
                 var oWUrl = "https://api.openweathermap.org/data/2.5/weather?id=498817&appid=741efa4783085ff52c374bcd9d5b8ce6";
-                oW = Response<OpenWeather.OpenWeather>.GetResponse(oWUrl).Result;
+                
+                oW = Response<OpenWeather.OpenWeather>.GetResponse(oWUrl);
             }
             catch(Exception)
             {
-                oW = new OpenWeather.OpenWeather();
+                Console.WriteLine("Attention. Data is no correct. No response from OpenWeather.");
             }
 
             try
             {
                 var wAUrl = "http://api.weatherapi.com/v1/current.json?key=d53b823ad1374774be4130634221505&q=Saint&aqi=yes";
-                wA = Response<WeatherApi.WeatherApi>.GetResponse(wAUrl).Result;
+                wA = Response<WeatherApi.WeatherApi>.GetResponse(wAUrl);
             }
             catch (Exception)
             {
-                wA = new WeatherApi.WeatherApi();
+                Console.WriteLine("Attention. Data is no correct. No response from WeatherApi.");
             }
 
             try
             {
                 var wIUrl = "https://api.weatherbit.io/v2.0/current?lat=59.9342&lon=30.3350&key=2457bd232f554f64a7d7028f1f035639&include=minutely";
-                wI = Response<WeatherbitIo.WeatherbitIo>.GetResponse(wIUrl).Result;
+                wI = Response<WeatherbitIo.WeatherbitIo>.GetResponse(wIUrl);
             }
             catch (Exception)
             {
-                wI = new WeatherbitIo.WeatherbitIo();
+                Console.WriteLine("Attention. Data is no correct. No response from WeatherbitIo.");
             }
 
             
@@ -69,7 +70,7 @@ namespace WeatherWebApp_Console_
             
             WeatherInfo[(int)WeatherVariables.CurrTime] = wA.location.localtime;
 
-            WeatherInfo[(int)WeatherVariables.Correlation] = (0.507 * wA.current.temp_c + 0.482 * wI.data[0].temp).ToString("0.##") + "° ";
+            WeatherInfo[(int)WeatherVariables.Regression] = (0.507 * wA.current.temp_c + 0.482 * wI.data[0].temp).ToString("0.##") + "° ";
             
             return WeatherInfo;
         }

@@ -7,13 +7,13 @@ namespace WeatherWebApp_Console_
 {
     static class Response<T>
     {
-        public static async Task<T> GetResponse(string url)
+        public static T GetResponse(string url)
         {
             var weatherRequest = WebRequest.Create(url);
             weatherRequest.Method = "POST";
             weatherRequest.ContentType = "application/x-www-urlencoded";
 
-            var weatherResponse = await weatherRequest.GetResponseAsync();
+            var weatherResponse = weatherRequest.GetResponse();
 
             var weatherAnswer = string.Empty;
 
@@ -21,7 +21,7 @@ namespace WeatherWebApp_Console_
             {
                 using (StreamReader reader = new StreamReader(s))
                 {
-                    weatherAnswer = await reader.ReadToEndAsync();
+                    weatherAnswer = reader.ReadToEnd();
                 }
             }
 

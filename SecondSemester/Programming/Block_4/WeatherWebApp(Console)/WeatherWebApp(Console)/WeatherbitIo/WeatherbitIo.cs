@@ -11,7 +11,9 @@ namespace WeatherWebApp_Console_.WeatherbitIo
         public WeatherbitIo()
         {
             data = new Data[1];
+            data[0] = new Data();
             minutely = new Minutely[1];
+            minutely[0] = new Minutely();
             count = 0;
 
         }

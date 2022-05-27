@@ -8,6 +8,7 @@ namespace WeatherWebApp_Console_.OpenWeather
         {
             Coord = new Coord();
             Weather = new Weather[1];
+            Weather[0] = new Weather();
             Base = string.Empty;
             Main = new Main();
             Visibility = 0;

@@ -24,31 +24,40 @@ namespace WeatherWebApp_Browser_
         protected global::System.Web.UI.Timer Timer1;
 
         /// <summary>
-        /// Label3 элемент управления.
+        /// errorLabel элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label errorLabel;
 
         /// <summary>
-        /// Label4 элемент управления.
+        /// averageTemp элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label averageTemp;
 
         /// <summary>
-        /// Label5 элемент управления.
+        /// windSpeed элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label windSpeed;
+
+        /// <summary>
+        /// direction элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически созданное поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label direction;
 
         /// <summary>
         /// Label7 элемент управления.
@@ -60,31 +69,31 @@ namespace WeatherWebApp_Browser_
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// Label8 элемент управления.
+        /// localtime элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.Label localtime;
 
         /// <summary>
-        /// Label9 элемент управления.
+        /// regressionResult элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
+        protected global::System.Web.UI.WebControls.Label regressionResult;
 
         /// <summary>
-        /// Label10 элемент управления.
+        /// regression элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label regression;
 
         /// <summary>
         /// Image2 элемент управления.
@@ -114,21 +123,21 @@ namespace WeatherWebApp_Browser_
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
-        /// Label6 элемент управления.
+        /// weatherMain элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label weatherMain;
 
         /// <summary>
-        /// Label2 элемент управления.
+        /// weatherDescription элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label weatherDescription;
     }
 }

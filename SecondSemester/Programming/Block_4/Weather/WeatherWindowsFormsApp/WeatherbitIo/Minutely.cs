@@ -8,5 +8,8 @@ namespace WeatherWindowsFormsApp.WeatherbitIo
 {
     class Minutely
     {
+        public Minutely()
+        {
+        }
     }
 }

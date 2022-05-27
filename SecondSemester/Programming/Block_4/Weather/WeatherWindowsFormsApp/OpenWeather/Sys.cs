@@ -4,6 +4,15 @@ namespace WeatherWindowsFormsApp.OpenWeather
 {
     class Sys
     {
+        public Sys()
+        {
+            Type = 0;
+            Id = 0;
+            Country = string.Empty;
+            Sunrise = 0;
+            Sunset = 0;
+        }
+
         [JsonProperty("type")]
         public double Type;
 

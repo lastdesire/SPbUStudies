@@ -4,6 +4,24 @@ namespace WeatherWindowsFormsApp.OpenWeather
 {
     class OpenWeather
     {
+        public OpenWeather()
+        {
+            Coord = new Coord();
+            Weather = new Weather[1];
+            Weather[0] = new Weather();
+            Base = string.Empty;
+            Main = new Main();
+            Visibility = 0;
+            Wind = new Wind();
+            Clouds = new Clouds();
+            Dt = 0;
+            Sys = new Sys();
+            Timezone = 0;
+            Id = 0;
+            Name = string.Empty;
+            Cod = 0;
+        }
+
         [JsonProperty("coord")]
         public Coord Coord;
 
@@ -38,7 +56,7 @@ namespace WeatherWindowsFormsApp.OpenWeather
         public int Id;
 
         [JsonProperty("name")]
-        public string Name; 
+        public string Name;
 
         [JsonProperty("cod")]
         public double Cod;

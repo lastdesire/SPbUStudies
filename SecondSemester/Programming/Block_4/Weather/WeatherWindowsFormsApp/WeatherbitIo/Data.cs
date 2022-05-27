@@ -4,6 +4,45 @@ namespace WeatherWindowsFormsApp.WeatherbitIo
 {
     internal class Data
     {
+
+        public Data()
+        {
+            wind_cdir = string.Empty;
+            rh = 0;
+            pod = string.Empty;
+            lon = 0;
+            pres = 0;
+            timezone = string.Empty;
+            ob_time = string.Empty;
+            country_code = string.Empty;
+            clouds = 0;
+            vis = 0;
+            wind_spd = 0;
+            wind_cdir_full = string.Empty;
+            app_temp = 0;
+            state_code = string.Empty;
+            ts = 0;
+            h_angle = 0;
+            dewpt = 0;
+            weather = new Weather();
+            uv = string.Empty;
+            aqi = 0;
+            station = string.Empty;
+            wind_dir = 0;
+            elev_angle = 0;
+            datetime = string.Empty;
+            precip = 0;
+            ghi = 0;
+            dni = 0;
+            dhi = 0;
+            solar_rad = 0;
+            city_name = string.Empty;
+            sunrise = string.Empty;
+            sunset = string.Empty;
+            temp = 0;
+            lat = 0;
+            slp = 0;
+        }
         public string wind_cdir;
         public double rh;
         public string pod;

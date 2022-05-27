@@ -32,9 +32,10 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxWeather = new System.Windows.Forms.GroupBox();
-            this.correlation = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.regression = new System.Windows.Forms.Label();
+            this.regressionResult = new System.Windows.Forms.Label();
             this.currTime = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.mainWeather = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.temperatureChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.groupBoxWeather.SuspendLayout();
             this.groupBoxWind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temperatureChart)).BeginInit();
@@ -54,8 +56,9 @@
             // 
             // groupBoxWeather
             // 
-            this.groupBoxWeather.Controls.Add(this.correlation);
-            this.groupBoxWeather.Controls.Add(this.label9);
+            this.groupBoxWeather.Controls.Add(this.errorLabel);
+            this.groupBoxWeather.Controls.Add(this.regression);
+            this.groupBoxWeather.Controls.Add(this.regressionResult);
             this.groupBoxWeather.Controls.Add(this.currTime);
             this.groupBoxWeather.Controls.Add(this.label7);
             this.groupBoxWeather.Controls.Add(this.mainWeather);
@@ -66,28 +69,28 @@
             this.groupBoxWeather.Controls.Add(this.panel1);
             this.groupBoxWeather.Location = new System.Drawing.Point(12, 12);
             this.groupBoxWeather.Name = "groupBoxWeather";
-            this.groupBoxWeather.Size = new System.Drawing.Size(250, 274);
+            this.groupBoxWeather.Size = new System.Drawing.Size(654, 274);
             this.groupBoxWeather.TabIndex = 1;
             this.groupBoxWeather.TabStop = false;
             this.groupBoxWeather.Text = "Weather";
             // 
-            // correlation
+            // regression
             // 
-            this.correlation.AutoSize = true;
-            this.correlation.Location = new System.Drawing.Point(162, 200);
-            this.correlation.Name = "correlation";
-            this.correlation.Size = new System.Drawing.Size(57, 13);
-            this.correlation.TabIndex = 8;
-            this.correlation.Text = "Correlation";
+            this.regression.AutoSize = true;
+            this.regression.Location = new System.Drawing.Point(162, 200);
+            this.regression.Name = "regression";
+            this.regression.Size = new System.Drawing.Size(60, 13);
+            this.regression.TabIndex = 8;
+            this.regression.Text = "Regression";
             // 
-            // label9
+            // regressionResult
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(159, 181);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Correlation result:";
+            this.regressionResult.AutoSize = true;
+            this.regressionResult.Location = new System.Drawing.Point(159, 181);
+            this.regressionResult.Name = "regressionResult";
+            this.regressionResult.Size = new System.Drawing.Size(91, 13);
+            this.regressionResult.TabIndex = 7;
+            this.regressionResult.Text = "Regression result:";
             // 
             // currTime
             // 
@@ -201,10 +204,23 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "Temperature";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Regression";
             this.temperatureChart.Series.Add(series1);
-            this.temperatureChart.Size = new System.Drawing.Size(379, 247);
+            this.temperatureChart.Series.Add(series2);
+            this.temperatureChart.Size = new System.Drawing.Size(373, 224);
             this.temperatureChart.TabIndex = 2;
             this.temperatureChart.Text = "chart1";
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(162, 247);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 13);
+            this.errorLabel.TabIndex = 9;
             // 
             // Form1
             // 
@@ -239,8 +255,9 @@
         private System.Windows.Forms.Label currTime;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataVisualization.Charting.Chart temperatureChart;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label correlation;
+        private System.Windows.Forms.Label regressionResult;
+        private System.Windows.Forms.Label regression;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 

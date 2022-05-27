@@ -4,6 +4,18 @@ namespace WeatherWindowsFormsApp.WeatherApi
 {
     class Location
     {
+        public Location()
+        {
+            name = string.Empty;
+            region = string.Empty;
+            country = string.Empty;
+            lat = 0;
+            lon = 0;
+            tz_id = string.Empty;
+            localtime_epoch = 0;
+            localtime = "                    ";
+        }
+
         public string name;
 
         public string region;

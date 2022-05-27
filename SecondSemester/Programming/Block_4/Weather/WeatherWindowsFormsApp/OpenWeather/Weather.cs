@@ -6,6 +6,14 @@ namespace WeatherWindowsFormsApp.OpenWeather
 {
     class Weather
     {
+        public Weather()
+        {
+            Id = 0;
+            Main = string.Empty;
+            Description = string.Empty;
+            IconId = string.Empty;
+        }
+
         [JsonProperty("id")]
         public int Id;
 
@@ -15,13 +23,10 @@ namespace WeatherWindowsFormsApp.OpenWeather
         [JsonProperty("description")]
         public string Description;
 
-        // Icon should be in folder, where you run application.
-        // If it is debug, you should upload folder Icons in folder Debug.
-        // If it is release, upload It in Release.
         [JsonProperty("icon")]
         public string IconId;
 
-        public Bitmap Icon 
+        public Bitmap Icon
         {
             get
             {
@@ -35,5 +40,6 @@ namespace WeatherWindowsFormsApp.OpenWeather
                 }
             }
         }
+
     }
 }

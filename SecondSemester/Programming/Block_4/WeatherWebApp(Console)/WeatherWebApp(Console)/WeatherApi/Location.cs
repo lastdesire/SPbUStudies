@@ -13,7 +13,7 @@ namespace WeatherWebApp_Console_.WeatherApi
             lon = 0;
             tz_id = string.Empty;
             localtime_epoch = 0;
-            localtime = string.Empty;
+            localtime = "                    ";
         }
 
         public string name;

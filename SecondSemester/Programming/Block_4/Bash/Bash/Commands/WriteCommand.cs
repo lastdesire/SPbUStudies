@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Collections;
 using Bash.Bash;
 
 namespace Bash.Commands

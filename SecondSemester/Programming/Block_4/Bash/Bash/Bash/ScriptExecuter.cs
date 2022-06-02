@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Bash.Commands;
 
 namespace Bash.Bash
 {
-    public class ScriptExecuter
+    public class ScriptExecuter // Содержит метод Run, который возвращает по переданному пути файла все то, что в нем находится.
     {
         public string Name { get; protected set; } = "script";
 

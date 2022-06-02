@@ -1,5 +1,4 @@
-﻿using System;
-using Bash.BashOutput;
+﻿using Bash.BashOutput;
 using Bash.Commands;
 
 namespace Bash.Bash
@@ -8,7 +7,10 @@ namespace Bash.Bash
     {
         public static int ExecuteCommand(string currCommand, string[] args, Logger logger, LocalVariables localVariables, CommandParser commandParser, MyBash myBash)
         {
+            // Новый последний результат выполненной команды.
             int newLastResult;
+
+            // В зависимости от того, какая команда, создаем новый объект нашей команды и используем метод Run.
             switch (currCommand)
             {
                 case "pwd":

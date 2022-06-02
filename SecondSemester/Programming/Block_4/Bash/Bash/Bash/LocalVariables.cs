@@ -3,11 +3,11 @@ using System.Collections;
 
 namespace Bash.Bash
 {
-    public class LocalVariables
+    public class LocalVariables // Класс, который позволяет хранить локальные переменные, реализуя Hashtable.
     {
         public Hashtable localVariables = new Hashtable();
 
-        public string CreateNewVariable(string[] args) // Создает новую переменную, название которой равно args[0].
+        public string CreateNewVariable(string[] args) // Создает новую переменную, название которой равно args[0] (значение "").
         {
             if (Int32.TryParse(args[0][0].ToString(), out int parseResult)) // First char can't be integer.
             {
@@ -21,6 +21,10 @@ namespace Bash.Bash
             return "";
         }
 
+        // Создает новую переменную, название которой равно args[0] (значение args[2]).
+        // args[1] = '='.
+        // Пример: $ a = 5;
+        // $ -- команда; a, = , 5 -- аргументы команды.
         public string AssignValueToVariable(string[] args)
         {
             if (Int32.TryParse(args[0][0].ToString(), out int parseResult)) // First char can't be integer.
@@ -39,6 +43,10 @@ namespace Bash.Bash
             return "";
         }
 
+        // Добавляет к существующей переменной строку. Если переменной не существует, то создает ее с указанной строкой.
+        // args[1] = "+=".
+        // Пример: $ a += 5;
+        // $ -- команда; a, += , 5 -- аргументы команды.
         public string AddValueToVariable(string[] args)
         {
             if (Int32.TryParse(args[0][0].ToString(), out int parseResult)) // First char can't be integer.

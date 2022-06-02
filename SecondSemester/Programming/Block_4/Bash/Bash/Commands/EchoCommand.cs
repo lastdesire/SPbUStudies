@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
+
 namespace Bash.Commands
 {
     public class EchoCommand : Command

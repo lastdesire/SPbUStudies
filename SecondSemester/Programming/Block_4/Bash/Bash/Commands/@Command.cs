@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Text;
 using Bash.Bash;
 
 namespace Bash.Commands
 {
-    public class AtCommand
+    public class AtCommand 
     {
         public string Name { get; protected set; } = "@";
 
-        public string Run(string command, LocalVariables localVariables)
+        // Заменяет в строке, напечатанной пользователем "@[variablename]" на саму переменную, которая хранится локально.
+        // Если переменной с таким именем не существует, то строка никак не меняется.
+        public string Run(string command, LocalVariables localVariables) 
         {
             for (var c = 0; c < command.Length; c++)
             {

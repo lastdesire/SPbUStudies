@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Collections;
+﻿using System.Collections.Generic;
 using Bash.Bash;
 
 namespace Bash.Commands
 { 
 
-    public class DollarCommand
+    public class DollarCommand // Инициализация и изменение локальных переменных (например, "$ a += 5").
     {
         public string Name { get; protected set; } = "$";
 

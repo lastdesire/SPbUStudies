@@ -1,7 +1,6 @@
-﻿using System;
-namespace Bash.Commands
+﻿namespace Bash.Commands
 {
-    public abstract class Command
+    public abstract class Command // Абстрактный класс для упрощенной реализации некоторых команд.
     {
         public abstract string Name { get; protected set; }
         public abstract string[] Run(string[] args);

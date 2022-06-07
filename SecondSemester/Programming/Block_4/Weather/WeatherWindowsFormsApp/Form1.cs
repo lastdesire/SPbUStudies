@@ -23,7 +23,7 @@ namespace WeatherWindowsFormsApp
 
             try
             {
-                var oWUrl = "https://api.openweathermap.org/data/2.5/weather?id=498817&appid=741efa4783085ff52c374bcd9d5b8ce6";
+                var oWUrl = "http://api.openweathermap.org/data/2.5/weather?id=498817&appid=741efa4783085ff52c374bcd9d5b8ce6";
 
                 oW = ResponseGetter<OpenWeather.OpenWeather>.GetResponse(oWUrl);
             }
